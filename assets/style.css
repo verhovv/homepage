@@ -1,14 +1,25 @@
 * {
-  font-family: "Manrope", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
 }
+
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     background: black;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/background.png");
+    background-repeat: repeat;
+    filter: blur(4px);
+    z-index: -1;
 }
 
 .main-container {
@@ -19,11 +30,9 @@ body {
     gap: 10vh;
     background: white;
     padding: 20px;
-    border-radius: 4vh;
-    width: 100vh;
-    max-height: 50vh;
-    min-height: 10vh;
-    margin: 10px;
+    width: 100vw;
+    height: 100vh;
+    transition: width 1s, height 1s;
 }
 
 .main {
@@ -95,13 +104,14 @@ body {
     padding: 1vh;
 }
 
-.side-info h1{
+.side-info h1 {
     font-size: 4vh;
 }
 
-.side-info p{
+.side-info p {
     font-size: 1.5vh;
 }
+
 .side-info img {
     max-height: 25vh;
     max-width: 25vh;
@@ -109,7 +119,7 @@ body {
     min-width: 0;
 }
 
-.side-info p{
+.side-info p {
 }
 
 .hidden {
@@ -138,7 +148,13 @@ body {
         justify-content: center;
         margin: 0;
     }
+
     .side-info {
         display: none;
+    }
+
+    .main-container {
+        height: 20vh !important;
+        border-radius: 4vh;
     }
 }

@@ -3,6 +3,7 @@ const speed = 230
 const icons = document.querySelector('.main ul')
 const sideInfo = document.querySelector('.side-info')
 const mainDiv = document.querySelector('.main')
+const mainContainer = document.querySelector('.main-container')
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -36,11 +37,15 @@ async function animate() {
     await replaceHTMLWithLatency('Verhov Vladimi<u>r</u>')
     await replaceHTMLWithLatency('Verhov Vladimir')
 
-    mainDiv.classList.add('fade-in')
-    await sleep(speed * 2)
-    icons.classList.add('fade-in')
-    await sleep(speed * 2)
-    sideInfo.classList.add('fade-in')
+    mainDiv.classList.add('fade-in');
+    await sleep(speed * 2);
+    icons.classList.add('fade-in');
+    await sleep(speed * 2);
+    sideInfo.classList.add('fade-in');
+    await sleep(speed * 2);
+    mainContainer.style.width = "100vh";
+    mainContainer.style.height = "50vh";
+    mainContainer.style.borderRadius = "4vh";
 }
 
 animate()
